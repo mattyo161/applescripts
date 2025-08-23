@@ -14,7 +14,7 @@ As such it is best practice not to include `/`, `:` in your file names, even tho
 
 The `POSIX path of <file>` will take a path in either Unix/Apple form and make it a valid Unix path. You can also convert this path to a string using `as string`. Here is an example of taking a MacOS Path (`:` delimited) and converting to a Unix Path:
 
-```Applescript
+```applescript
 set fileName to "Seagate Slim Drive:Backup Folder Jul, 19 2018:My Resume.pages"
 set posixPath to POSIX path of fileName
 -- "/Volumes/Seagate Slim Drive/Backup Folder Jul, 19 2018/My Resume.pages"
@@ -24,7 +24,7 @@ set quotedPosixPath to quoted form of posixPath
 
 Note that the original filename was on an external disk `Seagate Slim Drive:` is converted to the `/Volumes/Seagate Slim Drive/` for the unix path as all external volumes are mounted under `/Volumes` by default. You will also note the use of the `quoted form of` prefix used to ensure there is proper escaping of all special characters like quotes, spaces, etc. Here is a more representative example:
 
-```Applescript
+```applescript
 set fileName to "Seagate Slim Drive:Backup Folder Jul, 19 2018:My 'Resume'.pages"
 set posixPath to POSIX path of fileName
 -- "/Volumes/Seagate Slim Drive/Backup Folder Jul, 19 2018/My 'Resume'.pages"
@@ -40,7 +40,7 @@ The `POSIX file <path>` will take a path in either Unix/Apple form and convert i
 
 Here is an example of conversion similar taking the output of the example above:
 
-```Applescript
+```applescript
 set fileName to "/Volumes/Seagate Slim Drive/Backup Folder Jul, 19 2018/My Resume.pages"
 set posixFile to POSIX file (fileName)
 -- file "Seagate Slim Drive:Backup Folder Jul, 19 2018:My Resume.pages"
